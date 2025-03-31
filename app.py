@@ -36,6 +36,20 @@ model.load_state_dict(checkpoint['model_state_dict'])
 # Set model to evaluation mode
 model.eval()
 
+# Initialize Flask app
+app = Flask(__name__)
+
+# --- ADD THIS ROUTE ---
+@app.route('/')
+def index():
+    """
+    Provides a simple welcome message for the root URL.
+    """
+    return "<h1>Cancer Detection API</h1><p>Use the /predict endpoint (POST) or /health endpoint (GET).</p>"
+# --- END OF ADDED ROUTE ---
+
+# Load any other environment variables or variables here
+label_encoding = {"malignant": 0, "benign": 1}
 
 # Configuration of the Health endpoint at /health using get method.
 @app.route('/health', methods=['GET'])
