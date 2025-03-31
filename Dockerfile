@@ -12,7 +12,7 @@ WORKDIR /opt/app
 # Install specific CPU versions of PyTorch and TorchVision first.
 # Using the CPU-specific index avoids pulling larger GPU dependencies.
 # Ensure these versions are compatible with your model checkpoint.
-RUN pip install --no-cache-dir torch==2.4.1 torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch torchvision
 
 # --- Application Dependencies ---
 # Copy the requirements file into the container FIRST to leverage Docker caching
