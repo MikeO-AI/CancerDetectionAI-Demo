@@ -9,7 +9,7 @@ from torchvision import models
 from image_transformations import preprocess
 from PIL import Image
 # Import modules
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 
 # Initialize Flask app
@@ -42,10 +42,8 @@ app = Flask(__name__)
 # --- ADD THIS ROUTE ---
 @app.route('/')
 def index():
-    """
-    Provides a simple welcome message for the root URL.
-    """
-    return "<h1>Cancer Detection API</h1><p>Use the /predict endpoint (POST) or /health endpoint (GET).</p>"
+    """Renders the main HTML page for the UI."""
+    return render_template('index.html') # Render the template
 # --- END OF ADDED ROUTE ---
 
 # Load any other environment variables or variables here
@@ -92,4 +90,4 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
