@@ -146,3 +146,9 @@ Here's how the web interface looks after uploading an image and receiving a pred
 ![Screenshot showing a malignant prediction result](results/Malignant-Image-Detected.png)
 
 ---
+
+## Dockerfile
+
+docker build -t breast-cancer-classifier:v1.0 .
+docker run -p 8090:8000 --name breast-cancer-classifier breast-cancer-classifier:v1.0
+docker tag breast-cancer-classifier:v1.0 awesomeai/breast-cancer-classifier:v1.0
