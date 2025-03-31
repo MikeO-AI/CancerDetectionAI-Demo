@@ -4,8 +4,8 @@
 
 This project is a web application demonstrating binary classification (benign vs. malignant) of breast cancer histopathology images. It uses a fine-tuned MobileNetV3 Large PyTorch model served via a Flask API, featuring a simple web interface for interactive predictions.
 
-**Current Time:** Sunday, March 30, 2025 at 8:36:04 PM
-**Location:** Raleigh, North Carolina, United States
+**Current Time:** Sunday, March 30, 2025 at 11:36:04 PM
+**Location:** Charlotte, North Carolina, United States
 
 *(Disclaimer: This is currently a demonstration project and is NOT intended for actual medical diagnosis or clinical use.)*
 
